@@ -9,4 +9,4 @@ resources:
 images:
 - name: kimyijin/hello-app
   newName: kimyijin/hello-app
-  newTag: 3d8851b
+  newTag: 80c4671
