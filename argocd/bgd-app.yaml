@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bgd-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/twojinie/gitops-lab-test.git		 # 본인의 깃 저장소 주소
+    path: argocd
+    targetRevision: main
+  destination:
+    namespace: bgd
+    server: https://kubernetes.default.svc
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
